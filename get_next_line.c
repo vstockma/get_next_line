@@ -94,8 +94,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
-		if (buff != NULL)
-			free (buff);
 		buff = NULL;
 		return (NULL);
 	}
@@ -105,9 +103,4 @@ char	*get_next_line(int fd)
 	line = ft_line(buff);
 	buff = ft_next(buff);
 	return (line);
-}
-
-int	main(void)
-{
-	return (0);
 }
